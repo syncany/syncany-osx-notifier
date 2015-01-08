@@ -1,0 +1,15 @@
+language: objective-c
+
+notifications:
+  - email: false
+
+env:
+  global:
+    - CONFIGURATION_BUILD_DIR=build
+
+before_install:
+  - brew update
+  - brew outdated xctool || brew upgrade xctool
+
+script:
+  -xctool -project syncany-notifier.xcodeproj -scheme syncany-notifier build
