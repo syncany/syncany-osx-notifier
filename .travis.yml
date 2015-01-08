@@ -21,5 +21,6 @@ deploy:
   api_key:
     secure: Xp2lwMvYLxXkGBnyJHc8LOmQJ8uq3TwbfJOFLEYTqFTkK7ee5IezSMCvzmDQPKthiTA6jufFQ/C4jK0TEM2lLWQ9Z1VgqNFLmSE0WlVCyM7gZAgDOHXKhBJbLtJIOcdu2ouGpt6WGUvFHRTJ31B7tHQ5XBbslXGzGJ/OtX+i7yQ=
   file: osx-notifier.app.tar.gz
+  skip_cleanup: true
   on:
     repo: cr0/osx-notifier
