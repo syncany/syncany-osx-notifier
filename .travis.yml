@@ -8,10 +8,9 @@ before_install:
   - brew outdated xctool || brew upgrade xctool
 
 script:
-  - xctool -configuration release -project syncany-notifier.xcodeproj -scheme syncany-notifier build
-  - mv $HOME/Library/Developer/Xcode/DerivedData/syncany-notifier-*/Build/Products/Release/syncany-notifier.app .
-  - tar cfvz syncany-notifier.app.tar.gz syncany-notifier.app
+  - xctool -configuration release -project Syncany.xcodeproj -scheme Syncany build
+  - mv $HOME/Library/Developer/Xcode/DerivedData/Syncany-*/Build/Products/Release/Syncany.app .
+  - tar cfvz osx-notifier.app.tar.gz Syncany.app
 
 after_success:
-  - shasum -p 256 syncany-notifier.app.tar.gz
-
+  - shasum -p 256 osx-notifier.app.tar.gz

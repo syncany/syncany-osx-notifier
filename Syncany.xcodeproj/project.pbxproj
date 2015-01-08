@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A655E8261A5EA71200C59562 /* CommandLine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6A3143F1A5AAD0F00E511CC /* CommandLine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A69971D91A52CE8300CE6096 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69971D81A52CE8300CE6096 /* AppDelegate.swift */; };
-		A69971DB1A52CE8300CE6096 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69971DA1A52CE8300CE6096 /* Images.xcassets */; };
 		A6A314421A5AAD1700E511CC /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A3143F1A5AAD0F00E511CC /* CommandLine.framework */; };
-		A6AE93E01A5EE3A0007BDEFC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6AE93DE1A5EE3A0007BDEFC /* MainMenu.xib */; };
+		A6AE93EE1A5F049F007BDEFC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6AE93E91A5F049F007BDEFC /* MainMenu.xib */; };
+		A6AE93EF1A5F049F007BDEFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AE93EB1A5F049F007BDEFC /* AppDelegate.swift */; };
+		A6AE93F01A5F049F007BDEFC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6AE93EC1A5F049F007BDEFC /* Info.plist */; };
+		A6AE93F11A5F049F007BDEFC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6AE93ED1A5F049F007BDEFC /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,12 +54,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A69971D31A52CE8300CE6096 /* syncany-notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "syncany-notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A69971D71A52CE8300CE6096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A69971D81A52CE8300CE6096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A69971DA1A52CE8300CE6096 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A69971D31A52CE8300CE6096 /* Syncany.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Syncany.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A314391A5AAD0F00E511CC /* CommandLine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommandLine.xcodeproj; path = lib/CommandLine/CommandLine.xcodeproj; sourceTree = "<group>"; };
-		A6AE93DF1A5EE3A0007BDEFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A6AE93EA1A5F049F007BDEFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MainMenu.xib; sourceTree = "<group>"; };
+		A6AE93EB1A5F049F007BDEFC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Syncany/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		A6AE93EC1A5F049F007BDEFC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Syncany/Info.plist; sourceTree = SOURCE_ROOT; };
+		A6AE93ED1A5F049F007BDEFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Syncany/Images.xcassets; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				A6A314391A5AAD0F00E511CC /* CommandLine.xcodeproj */,
-				A69971D51A52CE8300CE6096 /* syncany-notifier */,
+				A69971D51A52CE8300CE6096 /* Syncany */,
 				A69971D41A52CE8300CE6096 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,26 +86,27 @@
 		A69971D41A52CE8300CE6096 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A69971D31A52CE8300CE6096 /* syncany-notifier.app */,
+				A69971D31A52CE8300CE6096 /* Syncany.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A69971D51A52CE8300CE6096 /* syncany-notifier */ = {
+		A69971D51A52CE8300CE6096 /* Syncany */ = {
 			isa = PBXGroup;
 			children = (
-				A69971D81A52CE8300CE6096 /* AppDelegate.swift */,
-				A69971DA1A52CE8300CE6096 /* Images.xcassets */,
-				A6AE93DE1A5EE3A0007BDEFC /* MainMenu.xib */,
+				A6AE93E81A5F049F007BDEFC /* Base.lproj */,
+				A6AE93EB1A5F049F007BDEFC /* AppDelegate.swift */,
+				A6AE93ED1A5F049F007BDEFC /* Images.xcassets */,
 				A69971D61A52CE8300CE6096 /* Supporting Files */,
 			);
+			name = Syncany;
 			path = "syncany-notifier";
 			sourceTree = "<group>";
 		};
 		A69971D61A52CE8300CE6096 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A69971D71A52CE8300CE6096 /* Info.plist */,
+				A6AE93EC1A5F049F007BDEFC /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -118,12 +120,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A6AE93E81A5F049F007BDEFC /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				A6AE93E91A5F049F007BDEFC /* MainMenu.xib */,
+			);
+			name = Base.lproj;
+			path = Syncany/Base.lproj;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A69971D21A52CE8300CE6096 /* syncany-notifier */ = {
+		A69971D21A52CE8300CE6096 /* Syncany */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A69971ED1A52CE8300CE6096 /* Build configuration list for PBXNativeTarget "syncany-notifier" */;
+			buildConfigurationList = A69971ED1A52CE8300CE6096 /* Build configuration list for PBXNativeTarget "Syncany" */;
 			buildPhases = (
 				A69971CF1A52CE8300CE6096 /* Sources */,
 				A69971D01A52CE8300CE6096 /* Frameworks */,
@@ -135,9 +146,9 @@
 			dependencies = (
 				A655E8281A5EA71200C59562 /* PBXTargetDependency */,
 			);
-			name = "syncany-notifier";
+			name = Syncany;
 			productName = "syncany-notifier";
-			productReference = A69971D31A52CE8300CE6096 /* syncany-notifier.app */;
+			productReference = A69971D31A52CE8300CE6096 /* Syncany.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -154,7 +165,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A69971CE1A52CE8300CE6096 /* Build configuration list for PBXProject "syncany-notifier" */;
+			buildConfigurationList = A69971CE1A52CE8300CE6096 /* Build configuration list for PBXProject "Syncany" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -173,7 +184,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				A69971D21A52CE8300CE6096 /* syncany-notifier */,
+				A69971D21A52CE8300CE6096 /* Syncany */,
 			);
 		};
 /* End PBXProject section */
@@ -200,8 +211,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69971DB1A52CE8300CE6096 /* Images.xcassets in Resources */,
-				A6AE93E01A5EE3A0007BDEFC /* MainMenu.xib in Resources */,
+				A6AE93F11A5F049F007BDEFC /* Images.xcassets in Resources */,
+				A6AE93F01A5F049F007BDEFC /* Info.plist in Resources */,
+				A6AE93EE1A5F049F007BDEFC /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A69971D91A52CE8300CE6096 /* AppDelegate.swift in Sources */,
+				A6AE93EF1A5F049F007BDEFC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,10 +239,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A6AE93DE1A5EE3A0007BDEFC /* MainMenu.xib */ = {
+		A6AE93E91A5F049F007BDEFC /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A6AE93DF1A5EE3A0007BDEFC /* Base */,
+				A6AE93EA1A5F049F007BDEFC /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -319,11 +331,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = "syncany-notifier/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Syncany/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Syncany;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -331,18 +345,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = "syncany-notifier/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Syncany/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Syncany;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A69971CE1A52CE8300CE6096 /* Build configuration list for PBXProject "syncany-notifier" */ = {
+		A69971CE1A52CE8300CE6096 /* Build configuration list for PBXProject "Syncany" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A69971EB1A52CE8300CE6096 /* Debug */,
@@ -351,7 +366,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A69971ED1A52CE8300CE6096 /* Build configuration list for PBXNativeTarget "syncany-notifier" */ = {
+		A69971ED1A52CE8300CE6096 /* Build configuration list for PBXNativeTarget "Syncany" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A69971EE1A52CE8300CE6096 /* Debug */,

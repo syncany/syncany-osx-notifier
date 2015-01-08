@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A69971D21A52CE8300CE6096"
-               BuildableName = "syncany-notifier.app"
-               BlueprintName = "syncany-notifier"
-               ReferencedContainer = "container:syncany-notifier.xcodeproj">
+               BuildableName = "Syncany.app"
+               BlueprintName = "Syncany"
+               ReferencedContainer = "container:Syncany.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "A69971E21A52CE8300CE6096"
                BuildableName = "syncany-notifierTests.xctest"
                BlueprintName = "syncany-notifierTests"
-               ReferencedContainer = "container:syncany-notifier.xcodeproj">
+               ReferencedContainer = "container:Syncany.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "A69971E21A52CE8300CE6096"
                BuildableName = "syncany-notifierTests.xctest"
                BlueprintName = "syncany-notifierTests"
-               ReferencedContainer = "container:syncany-notifier.xcodeproj">
+               ReferencedContainer = "container:Syncany.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A69971D21A52CE8300CE6096"
-            BuildableName = "syncany-notifier.app"
-            BlueprintName = "syncany-notifier"
-            ReferencedContainer = "container:syncany-notifier.xcodeproj">
+            BuildableName = "Syncany.app"
+            BlueprintName = "Syncany"
+            ReferencedContainer = "container:Syncany.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A69971D21A52CE8300CE6096"
-            BuildableName = "syncany-notifier.app"
-            BlueprintName = "syncany-notifier"
-            ReferencedContainer = "container:syncany-notifier.xcodeproj">
+            BuildableName = "Syncany.app"
+            BlueprintName = "Syncany"
+            ReferencedContainer = "container:Syncany.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A69971D21A52CE8300CE6096"
-            BuildableName = "syncany-notifier.app"
-            BlueprintName = "syncany-notifier"
-            ReferencedContainer = "container:syncany-notifier.xcodeproj">
+            BuildableName = "Syncany.app"
+            BlueprintName = "Syncany"
+            ReferencedContainer = "container:Syncany.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
