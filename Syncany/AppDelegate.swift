@@ -13,7 +13,17 @@ import CommandLine
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        parseCommandLine()
+        let userInfo = aNotification.userInfo
+        let defaultLaunch: Bool = (userInfo!["NSApplicationLaunchIsDefaultLaunchKey"]! as Bool).boolValue
+        userInfo?.debugDescription.writeToFile("/Users/chr/Desktop/foo.txt", atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+        defaultLaunch.description.writeToFile("/Users/chr/Desktop/bool.txt", atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+
+        if defaultLaunch {
+            parseCommandLine()
+        }
+        else {
+            userInfo?.debugDescription.writeToFile("/Users/chr/Desktop/foo.txt", atomically: false, encoding: NSUTF8StringEncoding, error: nil)
+        }
     }
     
     func parseCommandLine() {
@@ -22,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         let title = StringOption(shortFlag: "t", longFlag: "title", required: true, helpMessage: "Title of the notification")
         let subtitle = StringOption(shortFlag: "s", longFlag: "subtitle", required: false, helpMessage: "Subtitle of the notification")
         let message = StringOption(shortFlag: "m", longFlag: "message", required: false, helpMessage: "Body of the notification")
+        let folder = StringOption(shortFlag: "f", longFlag: "folder", required: false, helpMessage: "Folder which will be opened once the notification is clicked")
         
         cli.addOptions(title, subtitle, message)
         let (success, error) = cli.parse()
@@ -32,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             exit(EX_USAGE)
         }
         
-        showNotification(title.value!, message: message.value, folder: nil)
+        showNotification(title.value!, message: message.value, folder: folder.value)
     }
     
     func showNotification(title: NSString, message: NSString? = nil, folder: NSString? = nil) {
@@ -51,11 +62,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
             userInfo["folder"] = folder
         }
         
+        //notification.identifier = "syncany-notification"
         notification.userInfo = userInfo
         
         let center = NSUserNotificationCenter.defaultUserNotificationCenter()
         center.delegate = self
         center.scheduleNotification(notification)
+    }
+    
+    func openFolder(userInfo: [NSObject : AnyObject]) {
+        
     }
     
     func userNotificationCenter(center: NSUserNotificationCenter, didDeliverNotification notification: NSUserNotification) {

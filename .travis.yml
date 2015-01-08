@@ -1,16 +1,25 @@
 language: objective-c
 
+
 notifications:
   email: false
 
 before_install:
-  - brew update
-  - brew outdated xctool || brew upgrade xctool
+- brew update
+- brew outdated xctool || brew upgrade xctool
 
 script:
-  - xctool -configuration release -project Syncany.xcodeproj -scheme Syncany build
-  - mv $HOME/Library/Developer/Xcode/DerivedData/Syncany-*/Build/Products/Release/Syncany.app .
-  - tar cfvz osx-notifier.app.tar.gz Syncany.app
+- xctool -configuration release -project Syncany.xcodeproj -scheme Syncany build
+- mv $HOME/Library/Developer/Xcode/DerivedData/Syncany-*/Build/Products/Release/Syncany.app .
+- tar cfvz osx-notifier.app.tar.gz Syncany.app
 
 after_success:
-  - shasum -p 256 osx-notifier.app.tar.gz
+- shasum -p 256 osx-notifier.app.tar.gz
+
+deploy:
+  provider: releases
+  api_key:
+    secure: Xp2lwMvYLxXkGBnyJHc8LOmQJ8uq3TwbfJOFLEYTqFTkK7ee5IezSMCvzmDQPKthiTA6jufFQ/C4jK0TEM2lLWQ9Z1VgqNFLmSE0WlVCyM7gZAgDOHXKhBJbLtJIOcdu2ouGpt6WGUvFHRTJ31B7tHQ5XBbslXGzGJ/OtX+i7yQ=
+  file: osx-notifier.app.tar.gz
+  on:
+    repo: cr0/osx-notifier
