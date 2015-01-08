@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A655E8261A5EA71200C59562 /* CommandLine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6A3143F1A5AAD0F00E511CC /* CommandLine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A69971D91A52CE8300CE6096 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69971D81A52CE8300CE6096 /* AppDelegate.swift */; };
+		A69971DB1A52CE8300CE6096 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A69971DA1A52CE8300CE6096 /* Images.xcassets */; };
+		A6A314421A5AAD1700E511CC /* CommandLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A3143F1A5AAD0F00E511CC /* CommandLine.framework */; };
+		A6AE93E01A5EE3A0007BDEFC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6AE93DE1A5EE3A0007BDEFC /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A655E8271A5EA71200C59562 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6A314391A5AAD0F00E511CC /* CommandLine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D06884219674D7D00BBFAAC;
+			remoteInfo = CommandLine;
+		};
+		A6A3143E1A5AAD0F00E511CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6A314391A5AAD0F00E511CC /* CommandLine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D06884319674D7D00BBFAAC;
+			remoteInfo = CommandLine;
+		};
+		A6A314401A5AAD0F00E511CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6A314391A5AAD0F00E511CC /* CommandLine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D06884E19674D7D00BBFAAC;
+			remoteInfo = CommandLineTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A655E8291A5EA71200C59562 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A655E8261A5EA71200C59562 /* CommandLine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A69971D31A52CE8300CE6096 /* syncany-notifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "syncany-notifier.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A69971D71A52CE8300CE6096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A69971D81A52CE8300CE6096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A69971DA1A52CE8300CE6096 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A6A314391A5AAD0F00E511CC /* CommandLine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommandLine.xcodeproj; path = lib/CommandLine/CommandLine.xcodeproj; sourceTree = "<group>"; };
+		A6AE93DF1A5EE3A0007BDEFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A69971D01A52CE8300CE6096 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6A314421A5AAD1700E511CC /* CommandLine.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A69971CA1A52CE8300CE6096 = {
+			isa = PBXGroup;
+			children = (
+				A6A314391A5AAD0F00E511CC /* CommandLine.xcodeproj */,
+				A69971D51A52CE8300CE6096 /* syncany-notifier */,
+				A69971D41A52CE8300CE6096 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A69971D41A52CE8300CE6096 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A69971D31A52CE8300CE6096 /* syncany-notifier.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A69971D51A52CE8300CE6096 /* syncany-notifier */ = {
+			isa = PBXGroup;
+			children = (
+				A69971D81A52CE8300CE6096 /* AppDelegate.swift */,
+				A69971DA1A52CE8300CE6096 /* Images.xcassets */,
+				A6AE93DE1A5EE3A0007BDEFC /* MainMenu.xib */,
+				A69971D61A52CE8300CE6096 /* Supporting Files */,
+			);
+			path = "syncany-notifier";
+			sourceTree = "<group>";
+		};
+		A69971D61A52CE8300CE6096 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A69971D71A52CE8300CE6096 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6A3143A1A5AAD0F00E511CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6A3143F1A5AAD0F00E511CC /* CommandLine.framework */,
+				A6A314411A5AAD0F00E511CC /* CommandLineTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A69971D21A52CE8300CE6096 /* syncany-notifier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A69971ED1A52CE8300CE6096 /* Build configuration list for PBXNativeTarget "syncany-notifier" */;
+			buildPhases = (
+				A69971CF1A52CE8300CE6096 /* Sources */,
+				A69971D01A52CE8300CE6096 /* Frameworks */,
+				A69971D11A52CE8300CE6096 /* Resources */,
+				A655E8291A5EA71200C59562 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A655E8281A5EA71200C59562 /* PBXTargetDependency */,
+			);
+			name = "syncany-notifier";
+			productName = "syncany-notifier";
+			productReference = A69971D31A52CE8300CE6096 /* syncany-notifier.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A69971CB1A52CE8300CE6096 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Christian Roth";
+				TargetAttributes = {
+					A69971D21A52CE8300CE6096 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = A69971CE1A52CE8300CE6096 /* Build configuration list for PBXProject "syncany-notifier" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A69971CA1A52CE8300CE6096;
+			productRefGroup = A69971D41A52CE8300CE6096 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A6A3143A1A5AAD0F00E511CC /* Products */;
+					ProjectRef = A6A314391A5AAD0F00E511CC /* CommandLine.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				A69971D21A52CE8300CE6096 /* syncany-notifier */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A6A3143F1A5AAD0F00E511CC /* CommandLine.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CommandLine.framework;
+			remoteRef = A6A3143E1A5AAD0F00E511CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A6A314411A5AAD0F00E511CC /* CommandLineTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CommandLineTests.xctest;
+			remoteRef = A6A314401A5AAD0F00E511CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A69971D11A52CE8300CE6096 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A69971DB1A52CE8300CE6096 /* Images.xcassets in Resources */,
+				A6AE93E01A5EE3A0007BDEFC /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A69971CF1A52CE8300CE6096 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A69971D91A52CE8300CE6096 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A655E8281A5EA71200C59562 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CommandLine;
+			targetProxy = A655E8271A5EA71200C59562 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A6AE93DE1A5EE3A0007BDEFC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6AE93DF1A5EE3A0007BDEFC /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A69971EB1A52CE8300CE6096 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A69971EC1A52CE8300CE6096 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A69971EE1A52CE8300CE6096 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "syncany-notifier/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A69971EF1A52CE8300CE6096 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = "syncany-notifier/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A69971CE1A52CE8300CE6096 /* Build configuration list for PBXProject "syncany-notifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A69971EB1A52CE8300CE6096 /* Debug */,
+				A69971EC1A52CE8300CE6096 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A69971ED1A52CE8300CE6096 /* Build configuration list for PBXNativeTarget "syncany-notifier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A69971EE1A52CE8300CE6096 /* Debug */,
+				A69971EF1A52CE8300CE6096 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A69971CB1A52CE8300CE6096 /* Project object */;
+}
