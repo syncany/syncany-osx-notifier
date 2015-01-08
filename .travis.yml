@@ -9,7 +9,7 @@ before_install:
 
 script:
   - xctool -configuration release -project syncany-notifier.xcodeproj -scheme syncany-notifier build
-  - mv -r $HOME/Library/Developer/Xcode/DerivedData/syncany-notifier-*/Build/Products/Release/syncany-notifier.app
+  - mv $HOME/Library/Developer/Xcode/DerivedData/syncany-notifier-*/Build/Products/Release/syncany-notifier.app .
   - tar cfvz syncany-notifier.app.tar.gz syncany-notifier.app
 
 after_success:
