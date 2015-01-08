@@ -12,4 +12,7 @@ before_install:
   - brew outdated xctool || brew upgrade xctool
 
 script:
-  -xctool -project syncany-notifier.xcodeproj -scheme syncany-notifier build
+  - xctool -project syncany-notifier.xcodeproj -scheme syncany-notifier build
+
+after_success:
+  - find .
