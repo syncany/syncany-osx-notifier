@@ -11,16 +11,16 @@ before_install:
 script:
 - xctool -configuration release -project Syncany.xcodeproj -scheme Syncany build
 - mv $HOME/Library/Developer/Xcode/DerivedData/Syncany-*/Build/Products/Release/Syncany.app .
-- tar cfvz osx-notifier.app.tar.gz Syncany.app
+- zip -r -X osx-notifier.app.zip Syncany.app
 
 after_success:
-- shasum -p 256 osx-notifier.app.tar.gz
+- shasum -p 256 osx-notifier.app.zip
 
 deploy:
   provider: releases
   api_key:
     secure: Xp2lwMvYLxXkGBnyJHc8LOmQJ8uq3TwbfJOFLEYTqFTkK7ee5IezSMCvzmDQPKthiTA6jufFQ/C4jK0TEM2lLWQ9Z1VgqNFLmSE0WlVCyM7gZAgDOHXKhBJbLtJIOcdu2ouGpt6WGUvFHRTJ31B7tHQ5XBbslXGzGJ/OtX+i7yQ=
-  file: osx-notifier.app.tar.gz
+  file: osx-notifier.app.zip
   skip_cleanup: true
   on:
     all_branches: true
