@@ -16,6 +16,8 @@ script:
 
 after_success:
 - ./.travis.sh
+- ls -al
+- shasum -a 256 syncany-osx-notifier_*.app.zip
 
 deploy:
   provider: releases

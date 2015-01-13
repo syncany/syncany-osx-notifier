@@ -15,5 +15,3 @@ else
   echo "Building release"
   mv syncany-osx-notifier.app.zip syncany-osx-notifier_$version.app.zip
 fi
-
-shasum -a 256 syncany-osx-notifier_*.app.zip
