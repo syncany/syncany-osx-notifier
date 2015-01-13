@@ -8,6 +8,7 @@ before_install:
 - brew update
 - brew outdated xctool || brew upgrade xctool
 - brew install jq
+- chmod a+x ./.travis.sh
 
 script:
 - xctool -configuration release -project Syncany.xcodeproj -scheme Syncany build
