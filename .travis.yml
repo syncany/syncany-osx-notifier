@@ -13,11 +13,9 @@ script:
 - xctool -configuration release -project Syncany.xcodeproj -scheme Syncany build
 - mv $HOME/Library/Developer/Xcode/DerivedData/Syncany-*/Build/Products/Release/Syncany.app .
 - zip -r -X syncany-osx-notifier.app.zip Syncany.app
-- ./.travis.sh
 
 after_success:
-- shasum -a 256 syncany-osx-notifier_*.app.zip
-- stat syncany-osx-notifier_*.app.zip
+- ./.travis.sh
 
 deploy:
   provider: releases

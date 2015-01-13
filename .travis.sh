@@ -16,3 +16,4 @@ else
   mv syncany-osx-notifier.app.zip syncany-osx-notifier_$version.app.zip
 fi
 
+echo "Checksum of the created zip file is `shasum -a 256 syncany-osx-notifier_*.app.zip`"
