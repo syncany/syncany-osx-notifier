@@ -4,7 +4,6 @@ notifications:
   email: false
 
 before_install:
-- cat /Users/travis/build.sh
 - brew update
 - brew outdated xctool || brew upgrade xctool
 - brew install jq
