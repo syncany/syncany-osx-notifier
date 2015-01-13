@@ -13,10 +13,7 @@ script:
 - xctool -configuration release -project Syncany.xcodeproj -scheme Syncany build
 - mv $HOME/Library/Developer/Xcode/DerivedData/Syncany-*/Build/Products/Release/Syncany.app .
 - zip -r -X syncany-osx-notifier.app.zip Syncany.app
-- if [ `jq -r .snapshot package.json` == true ];
-    then mv syncany-osx-notifier.app.zip syncany-osx-notifier_`jq -r .version package.json`+SNAPSHOT.`date +"%y%m%d%H%M%S"`.app.zip;
-    else mv syncany-osx-notifier.app.zip syncany-osx-notifier_`jq -r .version package.json`.app.zip
-  fi
+- ./.travis.sh
 
 after_success:
 - shasum -a 256 syncany-osx-notifier_*.app.zip
