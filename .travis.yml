@@ -1,26 +1,31 @@
 language: objective-c
 
-
 notifications:
   email: false
 
 before_install:
 - brew update
 - brew outdated xctool || brew upgrade xctool
+- brew install jq
 
 script:
 - xctool -configuration release -project Syncany.xcodeproj -scheme Syncany build
 - mv $HOME/Library/Developer/Xcode/DerivedData/Syncany-*/Build/Products/Release/Syncany.app .
-- zip -r -X osx-notifier.app.zip Syncany.app
+- zip -r -X syncany-osx-notifier.app.zip Syncany.app
+- if [ `jq -r '.snapshot' package.json` == true ];
+    then mv syncany-osx-notifier.app.zip syncany-osx-notifier_`jq -r '.version' package.json`+SNAPSHOT.`date +"%y%m%d%H%M%S"`.app.zip
+    else mv syncany-osx-notifier.app.zip syncany-osx-notifier_`jq -r '.version' package.json`.app.zip
+  fi
 
 after_success:
-- shasum -p 256 osx-notifier.app.zip
+- shasum -a 256 syncany-osx-notifier_*.app.zip
+- stat syncany-osx-notifier_*.app.zip
 
 deploy:
   provider: releases
   api_key:
     secure: Xp2lwMvYLxXkGBnyJHc8LOmQJ8uq3TwbfJOFLEYTqFTkK7ee5IezSMCvzmDQPKthiTA6jufFQ/C4jK0TEM2lLWQ9Z1VgqNFLmSE0WlVCyM7gZAgDOHXKhBJbLtJIOcdu2ouGpt6WGUvFHRTJ31B7tHQ5XBbslXGzGJ/OtX+i7yQ=
-  file: osx-notifier.app.zip
+  file: syncany-osx-notifier_*.app.zip
   skip_cleanup: true
   on:
     all_branches: true

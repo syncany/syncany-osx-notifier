@@ -1,0 +1,16 @@
+{
+  "name": "syncany-osx-notifier",
+  "version": "0.1.0-alpha",
+  "snapshot": true,
+  "description": "Show native OSX notifications using the official Syncany GUI",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cr0/syncany-osx-notifier.git"
+  },
+  "author": "Christian Roth <christian.roth@port17.de>",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/syncany/syncany/issues"
+  },
+  "homepage": "https://github.com/cr0/syncany-osx-notifier"
+}
