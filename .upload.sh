@@ -23,11 +23,9 @@ echo "------------------------------------"
 mv syncany-osx-notifier_*.app.zip $UPLOADDIR
 
 PWD=`pwd`
-cd $TEMPDISTDIR
+cd $UPLOADDIR
 shasum -a 256 * 2>/dev/null 
 cd "$PWD"
-
-find $UPLOADDIR
 
 # Copy to FTP 
 echo ""
