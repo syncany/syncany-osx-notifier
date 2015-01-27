@@ -1,5 +1,12 @@
 language: objective-c
 
+env:
+  global:
+  # FTP credentials    
+  - secure: "IYzi6korfZpdg8QiIWsgZh81J//NBZaM0ifdAkzZVDQUZkgmgmP/aCTlVZ8UATW717qtK0KDfKQjsRRsZ22O75y7VygBrLjqxYK2ZiwOqqZBBJ8a8VjQ/rA68HszqLjNxWqAzZwddRlPcLwilJrEkD5N4OiH1YuOSy+fx3QuHt4="
+  - secure: "cCqmoHjM5pKBw+bjd1D28dQWvTw1yk18E+QntRocQhVdqp0d7dHmqX7zO8O23O8w6BrKGl++ZsVRRxzFunkIxqxyz6ZH9mnYC1cq6EkFFvMbp9sUx0ZIZjHa0uwufSuWJv2oZnepn4oCk2opth1rimr0JTfd9SKAyP1qUrbLugg="
+  - secure: "Dex9VmSYirFRO4jMJ4MsFsAA/IrvVJfY2xaYqYg+eOty/iS+2P0a9wcnEgdVCj6vdbOfsojHDQ1pwhLgWapLG61L2Lv9WGJpEYSlgaYKVDGTILExt6VX476Ly95vuxwiAM4LePASxMaPeXyq1Msz0zgQbgTkE2PG9j3gf5N+NB0="
+
 notifications:
   email: false
 
@@ -7,7 +14,9 @@ before_install:
 - brew update
 - brew outdated xctool || brew upgrade xctool
 - brew install jq
+- brew install lftp
 - chmod a+x ./.travis.sh
+- chmod a+x ./.upload.sh
 
 script:
 - xctool -configuration release -project Syncany.xcodeproj -scheme Syncany build
@@ -16,15 +25,4 @@ script:
 
 after_success:
 - ./.travis.sh
-- ls -al
-- shasum -a 256 syncany-osx-notifier_*.app.zip
-
-deploy:
-  provider: releases
-  api_key:
-    secure: Xp2lwMvYLxXkGBnyJHc8LOmQJ8uq3TwbfJOFLEYTqFTkK7ee5IezSMCvzmDQPKthiTA6jufFQ/C4jK0TEM2lLWQ9Z1VgqNFLmSE0WlVCyM7gZAgDOHXKhBJbLtJIOcdu2ouGpt6WGUvFHRTJ31B7tHQ5XBbslXGzGJ/OtX+i7yQ=
-  file: syncany-osx-notifier_*.app.zip
-  skip_cleanup: true
-  on:
-    all_branches: true
-    tags: true
+- ./.upload.sh
