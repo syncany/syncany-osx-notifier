@@ -2,8 +2,7 @@
 
 SCRIPTDIR="$( cd "$( dirname "$0" )" && pwd )"
 BUILDDIR="$SCRIPTDIR/build"
-
-TEMPDIR="$BUILDDIR/temp"
+UPLOADDIR="$BUILDDIR/upload"
 
 if [ -n "$TRAVIS_PULL_REQUEST" -a "$TRAVIS_PULL_REQUEST" != "false" ]; then
 	echo "NOTE: Skipping FTP upload. This job is a PULL REQUEST."
@@ -15,18 +14,20 @@ if [ "$SYNCANY_FTP_HOST" == "" -o "$SYNCANY_FTP_USER" == "" -o "$SYNCANY_FTP_PAS
 	exit 1
 fi
 
+mkdir -p $UPLOADDIR
+
 # Gather deb/tar-gz/zip
 echo ""
 echo "Preparing files for upload ..."
 echo "------------------------------------"
-mv syncany-osx-notifier_*.app.zip $TEMPDIR
+mv syncany-osx-notifier_*.app.zip $UPLOADDIR
 
 PWD=`pwd`
 cd $TEMPDISTDIR
 shasum -a 256 * 2>/dev/null 
 cd "$PWD"
 
-find $TEMPDIR
+find $UPLOADDIR
 
 # Copy to FTP 
 echo ""
@@ -38,10 +39,10 @@ touch $FTPOK
 
 lftp -c "open ftp://$SYNCANY_FTP_HOST
 user $SYNCANY_FTP_USER $SYNCANY_FTP_PASS
-mirror --reverse --exclude javadoc/ --exclude reports/ --delete --parallel=3 --verbose $TEMPDIR /
+mirror --reverse --exclude javadoc/ --exclude reports/ --delete --parallel=3 --verbose $UPLOADDIR /
 put $FTPOK -o /syncany.ftpok
 bye
 "
 
-# Delete tempdir
-rm -rf "$TEMPDIR"
+# Delete UPLOADDIR
+rm -rf "$UPLOADDIR"
