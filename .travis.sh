@@ -1,17 +1,29 @@
 #!/bin/bash
 
-version=`jq -r .version package.json`
-snapshot=`jq -r .snapshot package.json`
-date=`date +"%y%m%d%H%M%S"`
+version=$(jq -r .version package.json)
+release=$(git log -n 1 --pretty=%d HEAD | grep master)
+snapshot=$([ -z "$release" ] && echo "true" || echo "false")
+revision=$(git rev-parse --short HEAD)
+date=$(date)
+timestamp=$(date +%s)
 
-echo "Writing build.info"
-echo "version: $version\nsnapshot: $snapshot\nbuilddate: $date" > build.info
+echo "Build information"
+echo "---------------------"
+echo -e "Version: $version\nSnapshot: $snapshot\nCompile Date: $date\nRevision: $revision" > build.info
+cat build.info
+echo "---------------------"
+echo ""
+
 zip syncany-osx-notifier.app.zip build.info > /dev/null 2>&1
 
-if [ $snapshot == true ];then
-  echo "Building snapshot release"
-  mv syncany-osx-notifier.app.zip syncany-osx-notifier_$version+SNAPSHOT.$date.app.zip
+if [ -z "$release" ]; then
+	filename=syncany-osx-notifier_$version+SNAPSHOT.$timestamp.$revision.app.zip
+
+	echo "Renaming to SNAPSHOT release: $filename ..."
+	mv syncany-osx-notifier.app.zip $filename
 else
-  echo "Building release"
-  mv syncany-osx-notifier.app.zip syncany-osx-notifier_$version.app.zip
+	filename=syncany-osx-notifier_$version.app.zip
+
+	echo "Renaming to RELEASE: $filename ..."
+	mv syncany-osx-notifier.app.zip $filename
 fi
