@@ -2,19 +2,18 @@ language: objective-c
 
 env:
   global:
-  # FTP credentials    
-  - secure: "IYzi6korfZpdg8QiIWsgZh81J//NBZaM0ifdAkzZVDQUZkgmgmP/aCTlVZ8UATW717qtK0KDfKQjsRRsZ22O75y7VygBrLjqxYK2ZiwOqqZBBJ8a8VjQ/rA68HszqLjNxWqAzZwddRlPcLwilJrEkD5N4OiH1YuOSy+fx3QuHt4="
-  - secure: "cCqmoHjM5pKBw+bjd1D28dQWvTw1yk18E+QntRocQhVdqp0d7dHmqX7zO8O23O8w6BrKGl++ZsVRRxzFunkIxqxyz6ZH9mnYC1cq6EkFFvMbp9sUx0ZIZjHa0uwufSuWJv2oZnepn4oCk2opth1rimr0JTfd9SKAyP1qUrbLugg="
-  - secure: "Dex9VmSYirFRO4jMJ4MsFsAA/IrvVJfY2xaYqYg+eOty/iS+2P0a9wcnEgdVCj6vdbOfsojHDQ1pwhLgWapLG61L2Lv9WGJpEYSlgaYKVDGTILExt6VX476Ly95vuxwiAM4LePASxMaPeXyq1Msz0zgQbgTkE2PG9j3gf5N+NB0="
+
+  # Encrypted env variable SYNCANY_API_KEY for upload
+  - secure: "F5u35u2CyYTRDSIbp1kZpTG7n4YTz+osg13fQ3DGYvqRPx2olyOFNV0dEPO5Y6xby6ki6re8sCl84KBnlqNxcRMhINgybhnDKgd149y2ST9n1RF5mvEvqMffYbAMOHoizv0y23wm50tWzZC6q20cb9xaUoiFQwPu/ZQDCSLL7g4="
 
 notifications:
   email: false
-
+  irc: chat.freenode.net#syncany
+  
 before_install:
 - brew update
 - brew outdated xctool || brew upgrade xctool
 - brew install jq
-- brew install lftp
 - chmod a+x ./.travis.sh
 - chmod a+x ./.upload.sh
 
