@@ -33,7 +33,7 @@ echo ""
 echo "Uploading"
 echo "---------"
 
-file_appzip=$(ls $REPODIR/syncany-osx-notifier_*.app.zip)
+file_appzip=$(ls $UPLOADDIR/syncany-osx-notifier_*.app.zip)
 
 echo "Uploading OSXNOTIFIER: $(basename $file_appzip) ..."
 upload_app "$file_appzip" "osxnotifier" "$snapshot" 
