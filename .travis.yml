@@ -4,7 +4,7 @@ env:
   global:
 
   # Encrypted env variable SYNCANY_API_KEY for upload
-  - secure: "F5u35u2CyYTRDSIbp1kZpTG7n4YTz+osg13fQ3DGYvqRPx2olyOFNV0dEPO5Y6xby6ki6re8sCl84KBnlqNxcRMhINgybhnDKgd149y2ST9n1RF5mvEvqMffYbAMOHoizv0y23wm50tWzZC6q20cb9xaUoiFQwPu/ZQDCSLL7g4="
+  - secure: "TBD2joSxvkDbx0JI6FZwxaOddjX1oC4QNs64XIgd7C0e12NM9D6d1tC7sjyRcv2Af4z5A6LrGlAy/9pp6vEXW2vN/o4IVh8s6+Yezu0CU+2PE9/u7IMcdVwkyZEgTZB6d/NMijOPvr8Hzor3Eh4aV1wsyoEhhfYw9/LDB0+VIOg="
 
 notifications:
   email: false
