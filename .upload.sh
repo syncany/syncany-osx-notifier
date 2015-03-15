@@ -1,22 +1,20 @@
 #!/bin/bash
 
+set -e
+
 SCRIPTDIR="$( cd "$( dirname "$0" )" && pwd )"
-BUILDDIR="$SCRIPTDIR/build"
-UPLOADDIR="$BUILDDIR/upload"
+UPLOADDIR="$SCRIPTDIR/build/upload"
 
 if [ -n "$TRAVIS_PULL_REQUEST" -a "$TRAVIS_PULL_REQUEST" != "false" ]; then
-	echo "NOTE: Skipping FTP upload. This job is a PULL REQUEST."
+	echo "NOTE: Skipping upload. This job is a PULL REQUEST."
 	exit 0
 fi
 
-if [ "$SYNCANY_FTP_HOST" == "" -o "$SYNCANY_FTP_USER" == "" -o "$SYNCANY_FTP_PASS" == "" ]; then
-	echo "ERROR: SYNCANY_FTP_* environment variables not set."
-	exit 1
-fi
+source "$SCRIPTDIR/core/gradle/upload/upload-functions"
 
+# Gather files
 mkdir -p $UPLOADDIR
 
-# Gather deb/tar-gz/zip
 echo ""
 echo "Preparing files for upload ..."
 echo "------------------------------------"
@@ -27,20 +25,18 @@ cd $UPLOADDIR
 shasum -a 256 * 2>/dev/null 
 cd "$PWD"
 
-# Copy to FTP 
+# List files to upload
+release=$(git log -n 1 --pretty=%d HEAD | grep master)
+snapshot=$([ -z "$release" ] && echo "true" || echo "false") # Invert 'release'
+
 echo ""
-echo "Uploading files to Syncany FTP ..."
-echo "------------------------------------"
+echo "Uploading"
+echo "---------"
 
-FTPOK=/tmp/syncany.ftpok
-touch $FTPOK
+file_appzip=$(ls $REPODIR/syncany-osx-notifier_*.app.zip)
 
-lftp -c "open ftp://$SYNCANY_FTP_HOST
-user $SYNCANY_FTP_USER $SYNCANY_FTP_PASS
-mirror --reverse --exclude javadoc/ --exclude reports/ --delete --parallel=3 --verbose $UPLOADDIR /
-put $FTPOK -o /syncany.ftpok
-bye
-"
+echo "Uploading OSXNOTIFIER: $(basename $file_appzip) ..."
+upload_app "$file_appzip" "osxnotifier" "$snapshot" 
 
 # Delete UPLOADDIR
 rm -rf "$UPLOADDIR"
