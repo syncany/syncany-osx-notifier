@@ -14,6 +14,9 @@ before_install:
 - brew update
 - brew outdated xctool || brew upgrade xctool
 - brew install jq
+- brew install openssl
+- brew link --force openssl
+- openssl version -a
 - chmod a+x ./.travis.sh
 - chmod a+x ./.upload.sh
 
