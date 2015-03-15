@@ -36,7 +36,7 @@ echo "---------"
 file_appzip=$(ls $UPLOADDIR/syncany-osx-notifier_*.app.zip)
 
 echo "Uploading OSXNOTIFIER: $(basename $file_appzip) ..."
-upload_app "$file_appzip" "osxnotifier" "$snapshot" 
+upload_file "$file_appzip" "app/osxnotifier" "snapshot=$snapshot"
 
 # Delete UPLOADDIR
 rm -rf "$UPLOADDIR"
