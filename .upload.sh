@@ -26,7 +26,7 @@ shasum -a 256 * 2>/dev/null
 cd "$PWD"
 
 # List files to upload
-release=$(git log -n 1 --pretty=%d HEAD | grep master)
+release=$(git log -n 1 --pretty=%d HEAD | grep master || true)
 snapshot=$([ -z "$release" ] && echo "true" || echo "false") # Invert 'release'
 
 echo ""
